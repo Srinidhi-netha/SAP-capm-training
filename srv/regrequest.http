@@ -1,0 +1,265 @@
+###
+http://localhost:4004/odata/v4/regional-services/RegionalSalesSrv
+
+###
+http://localhost:4004/odata/v4/regional-services/DateDimensionSrv
+
+###
+http://localhost:4004/odata/v4/regional-services/ProductDimensionSrv
+
+###
+http://localhost:4004/odata/v4/regional-services/GeoDimensionSrv
+
+
+
+# DATE DIMENSION
+
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createDateDimension
+Content-Type: application/json
+
+{
+    "dateKey":"01-01-2022",
+    "fiscalYear":2022,
+    "fiscalQuarterName":"Q1",
+    "fiscalMonthNumber":1
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createDateDimension
+Content-Type: application/json
+
+{
+    "dateKey":"05-04-2022",
+    "fiscalYear":2022,
+    "fiscalQuarterName":"Q2",
+    "fiscalMonthNumber":4
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createDateDimension
+Content-Type: application/json
+
+{
+    "dateKey":"10-09-2022",
+    "fiscalYear":2022,
+    "fiscalQuarterName":"Q3",
+    "fiscalMonthNumber":9
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createDateDimension
+Content-Type: application/json
+
+{
+    "dateKey":"09-12-2022",
+    "fiscalYear":2022,
+    "fiscalQuarterName":"Q4",
+    "fiscalMonthNumber":12
+}
+
+
+
+# PRODUCT DIMENSION
+
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createProductDimension
+Content-Type: application/json
+
+{
+    "productId":1,
+    "category":"Television",
+    "product":"LG OLED TV",
+    "line":"OLED"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createProductDimension
+Content-Type: application/json
+
+{
+    "productId":2,
+    "category":"Automotives",
+    "product":"Hyundai IONIQ",
+    "line":"Automatic"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createProductDimension
+Content-Type: application/json
+
+{
+    "productId":3,
+    "category":"Electronic Gadgets",
+    "product":"Samsung Galaxy",
+    "line":"Mobile"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createProductDimension
+Content-Type: application/json
+
+{
+    "productId":4,
+    "category":"Automotives",
+    "product":"Kia EV6 / Telluride",
+    "line":"Manual"
+}
+
+
+##################################################
+# GEO DIMENSION
+##################################################
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createGeoDimension
+Content-Type: application/json
+
+{
+    "geoId":1,
+    "region":"APAC",
+    "country":"South Korea",
+    "city":"Boryeong (South Chungcheong)"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createGeoDimension
+Content-Type: application/json
+
+{
+    "geoId":2,
+    "region":"APAC",
+    "country":"South Korea",
+    "city":"Dongducheon (Gyeonggi)"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createGeoDimension
+Content-Type: application/json
+
+{
+    "geoId":3,
+    "region":"APAC",
+    "country":"South Korea",
+    "city":"Gyeongsan (North Gyeongsang)"
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createGeoDimension
+Content-Type: application/json
+
+{
+    "geoId":4,
+    "region":"APAC",
+    "country":"South Korea",
+    "city":"Tongyeong (South Gyeongsang)"
+}
+
+
+##################################################
+# REGIONAL SALES
+##################################################
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6373168367,
+    "customer":"Byeong-ho",
+    "netSales":250000,
+    "grossSales":275000,
+    "quantity":2500,
+    "date_dateKey":"01-01-2022",
+    "product_productId":1,
+    "geo_geoId":1
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6195602796,
+    "customer":"Dong-hyeon",
+    "netSales":4530000,
+    "grossSales":4575000,
+    "quantity":780,
+    "date_dateKey":"05-04-2022",
+    "product_productId":2,
+    "geo_geoId":2
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6704492074,
+    "customer":"Eun-gyeong",
+    "netSales":3500000,
+    "grossSales":3850000,
+    "quantity":3200,
+    "date_dateKey":"10-09-2022",
+    "product_productId":3,
+    "geo_geoId":3
+}
+
+###
+POST http://localhost:4004/odata/v4/regional-services/createRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6294297606,
+    "customer":"Hyeon-jeong",
+    "netSales":5690000,
+    "grossSales":6250000,
+    "quantity":840,
+    "date_dateKey":"09-12-2022",
+    "product_productId":4,
+    "geo_geoId":4
+}
+
+
+##################################################
+# UPDATE
+##################################################
+
+###
+POST http://localhost:4004/odata/v4/regional-services/updateRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6373168367,
+    "netSales":2600000000,
+    "grossSales":285000,
+    "quantity":2550
+}
+
+
+##################################################
+# READ
+##################################################
+
+###
+POST http://localhost:4004/odata/v4/regional-services/readRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6373168367
+}
+
+
+##################################################
+# DELETE
+##################################################
+
+###
+POST http://localhost:4004/odata/v4/regional-services/deleteRegionalSales
+Content-Type: application/json
+
+{
+    "Id":6294297606
+}

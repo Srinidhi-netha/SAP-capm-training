@@ -1,0 +1,58 @@
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv
+
+### 
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv/$count
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$top=10
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$top=10&$skip=10
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$filter=CATEGORY eq 'Notebooks'&DIM_UNIT eq 'CM'
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$orderby=PRODUCT_ID desc
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv('74867AD200E41EDBA5D8B06B26EB4052')/PRODUCT_ID
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv('74867AD200E41EDBA5D8B06B26EB4052')/PRODUCT_ID/$value
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/ProductSrv?$expand=Items
+------------------------------
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Orders?$filter=RequiredDate%20ge%201997-01-01T00:00:00Z%20and%20RequiredDate%20lt%201998-01-01T00:00:00Z%20and%20Freight%20lt%20100&$select=CustomerID,RequiredDate,Freight
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$filter=City%20eq%20%27London%27&$select=ContactName,CustomerID,CompanyName
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$filter=Fax%20ne%20null
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$filter=ContactTitle%20eq%20%27Owner%27%20and%20(Country%20eq%20%27Mexico%27%20or%20Country%20eq%20%27Sweden%27%20or%20Country%20eq%20%27Germany%27)&$select=CompanyName,ContactName
+
+-----------------------------
+###1.
+https://services.odata.org/V4/Northwind/Northwind.svc/Products/$count?$filter=Discontinued%20eq%20true
+
+###2.
+https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$filter=startswith(CategoryName,%27Co%27)&$select=CategoryName,Description
+
+###3.
+https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$filter=contains(Address,%27rue%27)&$select=CompanyName,City,Country,PostalCode&$orderby=CompanyName
+
+
+
+

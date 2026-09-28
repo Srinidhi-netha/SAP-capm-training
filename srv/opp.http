@@ -1,0 +1,13 @@
+###
+
+POST http://localhost:4004/odata/v4/opportunity-services/createStaffMember
+Content-Type: application/json
+
+{
+    "employeeID":400001783,
+    "firstName":"Frank",
+    "middleName":"",
+    "lastName":"Krause",
+    "fullName":"Frank Krause",
+    "gender":"M"
+}

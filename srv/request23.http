@@ -1,0 +1,114 @@
+###
+http://localhost:4004/odata/v4/catalog-service1/BooksSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/AuthorSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/PublisherSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/CustomerSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/ShoppingBasketSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/ShoppingBasket_BookSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/WarehouseSrv
+ 
+###
+http://localhost:4004/odata/v4/catalog-service1/Warehouse_BookSrv
+ 
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createauthor
+Content-Type: application/json
+
+{
+    "name":"Anvithnetha",
+    "address":"goa",
+    "url":"www.anjalinaauthor.com"
+}
+
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createbooks
+Content-Type : application/json
+
+{
+    "publisher_name" : "Sanjana",
+    "author_name" : "Anvi",
+    "author_address" : "Bangalore",
+    "ISBN" : "DeathlyH1",
+    "title" : "Myth",
+    "year" : 2005,
+    "price" : 1199.00
+
+
+}
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createpublisher
+Content-Type: application/json
+
+{
+"name":"Sanjana",
+"address":"Bangalore",
+"phone":"9876543210",
+"url":"101"
+}
+###
+POST http://localhost:4004/odata/v4/shopping-services/createShoppingBasket
+Content-Type: application/json
+
+{
+    "ID":23,
+    "customers_email":"srinidhi576@gmail.com"
+}
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createShoppingBasket_Book
+Content-Type: application/json
+
+{
+    
+"count": 10,
+"books_ISBN": "DeathlyH1",
+"shoppingbasket_ID": 23
+}
+
+###
+
+POST http://localhost:4004/odata/v4/shopping-services/createcustomer
+Content-Type: application/json
+
+{
+    "email":"srinidhi576@gmail.com",
+    "name":"Srinidhi",
+    "phone":"8977876984",
+    "address":"Bangalore"
+}
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createwarehouse
+Content-Type: application/json
+
+{
+    "code":600,
+    "phone":"9988776655",
+    "address":"Chennai"
+}
+
+###
+POST http://localhost:4004/odata/v4/shopping-services/createwarehouse_book
+Content-Type: application/json
+
+{
+
+    "count": 9,
+    "books_ISBN": "DeathlyH",
+    "warehouse_code": 600
+}

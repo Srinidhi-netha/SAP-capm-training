@@ -1,0 +1,29 @@
+
+###
+POST http://localhost:4004/odata/v4/example-services/createOrders
+Content-Type : application/json
+
+{
+
+"ord":[{
+"orderId"  : 1289,
+"orderDate"   : "2004-11-20"
+},
+{
+"orderId"  : 673,
+"orderDate"   : "2004-10-24"
+},
+{
+"orderId"  : 1212,
+"orderDate"   : "2004-09-24"
+}]
+
+}
+###
+POST http://localhost:4004/odata/v4/example-services/updateOrders
+Content-Type : application/json
+
+{
+    "orderId"  : "1234",
+    "orderDate"   : "2004-12-01"
+}
